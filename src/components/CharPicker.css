@@ -1,0 +1,25 @@
+select {
+  font: inherit;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+}
+
+select.light {
+  border: 2px solid #015c91;
+  background: #b4e1fc;
+  color: #015c91;
+}
+
+select.dark {
+  border: 2px solid #880617;
+  background: #f88493;
+  color: #880617;
+}
+
+select:focus {
+  outline: none;
+}

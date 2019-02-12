@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import CharPicker from './components/CharPicker';
+import Character from './components/Character';
 
 class App extends Component {
+  state = {
+    selectedCharacter: 1,
+    side: 'light'
+  };
+
+  sideHandler = side => {
+    this.setState({ side: side });
+  };
+
+  charSelectHandler = event => {
+    const charId = event.target.value;
+    this.setState({ selectedCharacter: charId });
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <CharPicker
+          side={this.state.side}
+          selectedChar={this.state.selectedCharacter}
+          onCharSelect={this.charSelectHandler}
+        />
+        <Character selectedChar={this.state.selectedCharacter} />
+        <button onClick={this.sideHandler.bind(this, 'light')}>Light Side</button>
+        <button onClick={this.sideHandler.bind(this, 'dark')}>Dark Side</button>
+      </React.Fragment>
     );
   }
 }

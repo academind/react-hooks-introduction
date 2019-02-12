@@ -57,6 +57,10 @@ class Character extends Component {
       });
   };
 
+  componentWillUnmount() {
+    console.log('Too soon...');
+  }
+
   render() {
     let content = <p>Loading Character...</p>;
 

@@ -9,12 +9,12 @@ const App = props => {
   const [chosenSide, setChosenSide] = useState("light");
   const [selectedCharacter, setSelectedCharacter] = useState(1);
   const sideHandler = side => {
-    setChosenSide({ side });
+    setChosenSide(side);
   };
 
   const charSelectHandler = event => {
     const charId = event.target.value;
-    setSelectedCharacter({ charId });
+    setSelectedCharacter(charId);
   };
 
   const destructionHandler = () => {

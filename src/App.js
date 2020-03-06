@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import CharPicker from "./components/CharPicker";
 import Character from "./components/Character";
 
+
+
 const App = props => {
   const [state, setState] = useState({
     selectedCharacter: 1,
@@ -11,16 +13,16 @@ const App = props => {
   });
 
   const sideHandler = side => {
-    setState({ side: side });
+    setState({ ...state, side: side });
   };
 
   const charSelectHandler = event => {
     const charId = event.target.value;
-    setState({ selectedCharacter: charId });
+    setState({  ...state, selectedCharacter: charId });
   };
 
   const destructionHandler = () => {
-    setState({ destroyed: true });
+    setState({  ...state, destroyed: true });
   };
 
   let content = (

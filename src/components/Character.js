@@ -31,7 +31,7 @@ class Character extends Component {
         this.props.selectedChar
     );
     this.setState({ isLoading: true });
-    fetch('https://swapi.co/api/people/' + this.props.selectedChar)
+    fetch('https://swapi.co/api/people/' + this.props.selectedChar, {mode: 'no-cors'})
       .then(response => {
         if (!response.ok) {
           throw new Error('Could not fetch person!');

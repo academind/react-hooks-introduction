@@ -7,7 +7,7 @@ class CharPicker extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    fetch('https://swapi.co/api/people')
+    fetch('https://swapi.co/api/people', {mode: 'no-cors'})
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch.');

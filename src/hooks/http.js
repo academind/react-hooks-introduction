@@ -4,7 +4,7 @@ export const useHttp = (url, dependencies) => {
   const [isLoading, setIsLoading] = useState(false);
   const [fetchedData, setFetchedData] = useState(null);
 
-  //   fetch('https://swapi.co/api/people')
+  //   fetch('https://swapi.dev/api/people')
   useEffect(() => {
     setIsLoading(true);
     console.log('Sending Http request to URL: ' + url);

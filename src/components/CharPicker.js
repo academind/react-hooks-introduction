@@ -5,7 +5,7 @@ import { useHttp } from '../hooks/http';
 import './CharPicker.css';
 
 const CharPicker = props => {
-  const [isLoading, fetchedData] = useHttp('https://swapi.co/api/people', []);
+  const [isLoading, fetchedData] = useHttp('https://swapi.dev/api/people', []);
 
   const selectedCharacters = fetchedData
     ? fetchedData.results.slice(0, 5).map((char, index) => ({

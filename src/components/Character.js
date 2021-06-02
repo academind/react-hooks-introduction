@@ -6,7 +6,7 @@ import Summary from './Summary';
 const Character = props => {
 
   const [isLoading, fetchedData] = useHttp(
-    'https://swapi.co/api/people/' + props.selectedChar,
+    'https://swapi.dev/api/people/' + props.selectedChar,
     [props.selectedChar]
   );
 
